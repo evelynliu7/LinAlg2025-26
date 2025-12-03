@@ -49,5 +49,5 @@ subax1 = plt.subplot(235)
 # Notice that the options can be set directly in the draw call
 nx.draw(J,node_color="blue",node_size=5)
 
-# Show the plot
-plt.show()
+# Need to tell pyplot to save the graph as an image file
+plt.savefig('graph.png')
