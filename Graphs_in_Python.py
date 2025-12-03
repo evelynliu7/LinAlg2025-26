@@ -38,8 +38,8 @@ for v in G.nodes():
 
 nx.draw(G, with_labels = True, node_color="lightblue")
 
-# Need to tell pyplot to show the plot
-plt.show()
+# Need to tell pyplot to save the graph as an image file
+plt.savefig('graph.png')
 
 #  See NetworkX tutorial (https://networkx.org/documentation/stable/tutorial.html) for more plotting options
 # As well as matplotlib.pyplot tutorial (https://matplotlib.org/3.5.1/api/_as_gen/matplotlib.pyplot.html)
