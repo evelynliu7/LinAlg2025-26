@@ -42,8 +42,8 @@ print("\n")
 
 # Returns the dimensions of matrix A as a tuple (number of rows, number of columns)
 def matrix_dimensions(A):
-  num_rows = 0
-  num_cols = 0
+  num_rows = A.len()
+  num_cols = A[0].len()
   return((num_rows,num_cols))
 
 
@@ -52,7 +52,10 @@ def matrix_dimensions(A):
 
 # Returns True or False
 def can_multiply_matrices(A,B):
-  if (0==0):
+  A_rows, A_cols = matrix_dimensions(A);
+  B_rows, B_cols = matrix_dimensions(B);
+
+  if (A_cols == B_rows):
     return True
   else:
     return False
@@ -63,9 +66,22 @@ def can_multiply_matrices(A,B):
 # Returns the entry in row i, column j of the matrix product A*B
 
 def matrix_product_entry(A,B,i,j):
+  if(!can_multiply_matrices(A,B)){
+    return "Cannot multiply these matrices."
+  }
+  else{
+    # j = the col of B
+    # i = the row of A
 
+    answer = 0
+
+    for k in range(0, B.len()):
+      answer = answer + (B[k][j] * A[i][k])
+    
+    return answer
+  }
   # Should probably check first to see if the matrices can be multiplied!
-  return 0
+  # return 0
 
 
 # Challenge 4
@@ -73,13 +89,25 @@ def matrix_product_entry(A,B,i,j):
 
 # Returns the matrix product
 
-def matrix_product(A,B):
+def matrix_product(A,B)
 
   # Should probably check first to see if the matrices can be multiplied!
+  A_rows, A_cols = matrix_dimensions(A);
+  B_rows, B_cols = matrix_dimensions(B);
+
+  P = [[0]*A_rows]*B_cols
+
+  if(!can_multiply_matrices(A,B)):
+    return("Cannot multiply these matrices.")
+  else:
+    for i in range(A_rows):
+      for j in range(B_cols):
+        P[i][j] = matrix_product_entry(A, B, i, j)
+
 
   # Initialize a new empty list for your row lists 
-  P = []
-  # Use matrix_product_entry!
+  # P = []
+  # Use matrix_product_entry! 
 
   return P
 
