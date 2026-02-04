@@ -66,12 +66,7 @@ with open("matrix.txt") as f:
 M = np.array(d)
 print("\nThe matrix imported from matrix.txt:\n",M)
 
-# The elements of the numpy array are still strings. This converts all the elements to type int
-M_ints = M.astype(int)
-print("\nThe matrix imported from matrix.txt with integer entries:\n",M_ints)
-
-
-# Or convert the entries to floats
+# The elements of the numpy array are still strings. This converts all the elements to type float
 N = M.astype(float)
 print("\nThe matrix imported from matrix.txt with float entries: \n", N)
 
